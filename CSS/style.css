@@ -1,0 +1,511 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    /* garante altura total */
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Inter', sans-serif;
+    background-color: #ebe2e2;
+}
+
+main {
+    flex: 1;
+    /* ocupa o espaço entre header e footer */
+}
+
+
+:root {
+    --menu-bg-color: #7E7199;
+    --menu-text-color: white;
+    --link-hover-color: #3f4050;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    background-color: var(--menu-bg-color);
+    padding: 10px 20px;
+    position: relative;
+
+}
+
+#logo {
+    width: 50px;
+    height: 50px;
+}
+
+.header-link {
+    color: white;
+    text-decoration: none;
+}
+
+.area-menu {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    /* Empurra essa área para a direita */
+    gap: 15px;
+    /* Espaçamento entre Login, Cadastro e ☰ */
+}
+
+.hamburger-label:hover {
+    opacity: 0.8;
+}
+
+.header-link:hover {
+    color: #b6b6bb;
+    transition: 0.3s;
+}
+
+check:hover {
+    color: rgb(73, 68, 68);
+    transform: scale(1);
+    transition: 0.3s ease;
+}
+
+
+/* Ícone do menu hambúrguer */
+.hamburger-icon {
+    font-size: 30px;
+    cursor: pointer;
+    color: white;
+    padding: 10px 20px;
+    display: inline-block;
+}
+
+.hamburger-icon:hover {
+    color: #cdc1d1;
+}
+
+/* Menu horizontal oculto por padrão */
+.menu-horizontal {
+    display: none;
+    background-color: #f2eafa;
+    padding: 10px 20px;
+    border-bottom: 2px solid #a89abb;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    width: 100%;
+    max-width: 100%;
+}
+
+/* Estilo dos links do menu */
+.menu-horizontal a {
+    background-color: transparent;
+    color: #3b3b3b;
+    text-decoration: none;
+    border: 2px solid #3b3b3b;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 500;
+    font-family: 'Inter', sans-serif;
+}
+
+/* Efeito hover nos links */
+.menu-horizontal a:hover {
+    background-color: #d6c9e2;
+    color: black;
+    transition: 0.3s ease;
+}
+
+/* Barra de busca alinhada à direita */
+.barra-busca {
+    margin-left: auto;
+}
+
+/* Estilo do input de busca */
+.barra-busca {
+    display: flex;
+    align-items: center;
+    border: 2px solid #CDC1E6;
+    border-radius: 5px;
+    overflow: hidden;
+    background-color: white;
+    height: 40px;
+    max-width: 400px;
+    width: 100%;
+}
+
+
+.barra-busca input {
+    flex-grow: 1;
+    /* deixa o button no lado direito */
+    border: none;
+    outline: none;
+    padding: 0 10px;
+    font-size: 14px;
+    font-family: 'Inter', sans-serif;
+}
+
+.botao-buscar {
+    background-color: #CDC1E6;
+    border: none;
+    height: 100%;
+    padding: 0 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.botao-buscar img {
+    width: 18px;
+    height: 18px;
+}
+
+.botao-buscar:hover {
+    background-color: #a897cf;
+    transition: 0.5s ease;
+
+}
+
+
+/*
+**** CORPO DO SITE - FEED ****
+*/
+
+#feed {
+    width: 100%;
+    max-width: 550px;
+    margin: 30px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    padding: 0 12px;
+    margin-left: 650px;
+    margin-top: -500px;
+}
+
+.post-insta {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    overflow: hidden;
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 40px;
+}
+
+.topo-post {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px;
+}
+
+.avatar-insta {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.nome-usuario-insta {
+    font-weight: bold;
+    font-size: 0.95rem;
+    color: #2c2c2c;
+}
+
+.midia-insta {
+    width: 100%;
+    max-height: 550px;
+    object-fit: cover;
+}
+
+.acoes-insta {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 12px;
+    font-size: 1.3rem;
+    color: #333;
+}
+
+.acoes-insta span:hover {
+    color: #7E7199;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.acoes-insta .container {
+    margin-left: auto;
+}
+
+/*------ reações da publicação ------*/
+/* CURTIR */
+.heart input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.heart {
+    display: block;
+    position: relative;
+    cursor: pointer;
+    user-select: none;
+}
+
+.heart svg {
+    position: relative;
+    top: 0;
+    left: 0;
+    height: 35px;
+    width: 35px;
+    transition: all 0.3s;
+    fill: #666;
+}
+
+.heart input:checked~svg {
+    fill: #E3474F;
+}
+
+/* COMENTAR */
+.comentario-icone button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.icone-comentario {
+    transition: transform 0.3s ease, stroke 0.3s ease;
+    stroke: black;
+    width: 35px;
+    height: 39px;
+}
+
+.icone-comentario:hover {
+    /* aumenta o ícone */
+    stroke: #8e44ad;
+    /* cor azul no hover */
+}
+
+/* COMPARTILHAR */
+.send-icon {
+  font-size: 25px;
+  color: #8e44ad;
+  cursor: pointer;
+  margin-top: 5px;
+  margin-left: 2px;
+}
+
+.send-icon:hover {
+  color: #732d91;        /* Roxo mais escuro ao passar o mouse (opcional) */
+}
+
+
+/* SALVAR */
+.salvar {
+    --color: #a5a5b0;
+    --size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+    font-size: var(--size);
+    user-select: none;
+    fill: var(--color);
+    margin-top: 20px;
+    margin-right: 10px;
+}
+
+.salvar .save-regular {
+    position: absolute;
+    animation: keyframes-fill .5s;
+    transform-origin: top;
+}
+
+.salvar .save-solid {
+    position: absolute;
+    animation: keyframes-fill .5s;
+    display: none;
+    transform-origin: top;
+}
+
+/* ------ On check event ------ */
+.salvar input:checked~.save-regular {
+    display: none;
+}
+
+.salvar input:checked~.save-solid {
+    display: block;
+}
+
+/* ------ Hide the default checkbox ------ */
+.salvar input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+/* ------ Animation ------ */
+@keyframes keyframes-fill {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+
+    50% {
+        transform: scaleY(1.2);
+    }
+}
+
+
+.descricao-post {
+    padding: 0 12px 12px 12px;
+    font-size: 0.95rem;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.conteudo-principal {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 40px;
+    padding: 30px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#feed {
+    background-color: var(--menu-bg-color);
+    width: 560px;
+    min-height: 980px;
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    border-radius: 12px;
+}
+
+.post {
+    background-color: #d6b2e8;
+    width: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.post img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+
+
+/* Sugestões na lateral direita */
+.sugestoes-lateral {
+    width: 420px;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    padding: 20px;
+    font-family: 'Inter', sans-serif;
+    height: fit-content;
+    display: grid;
+    margin-left: 1300px;
+    margin-bottom: 190px;
+    margin-top: 190px;
+
+}
+
+.sugestoes-lateral h3 {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.sugestao-usuario {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 14px;
+
+}
+
+.avatar-sugestao {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.nome-sugestao {
+    flex-grow: 1;
+    margin-left: 10px;
+    font-size: 0.95rem;
+    color: #222;
+}
+
+.botao-seguir {
+    background-color: transparent;
+    color: #b0a2c0;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.botao-seguir:hover {
+    color: #8873a0;
+}
+
+/* rodapé */
+footer {
+    color: white;
+    background-color: var(--menu-bg-color);
+    padding: 15px;
+    color: var(--menu-text-color);
+    font-family: 'Roboto', sans-serif;
+    margin-top: auto;
+    /* faz com que o rodapé se mova para o final */
+}
+
+.rodape-container {
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.coluna p {
+    margin: 8px 0;
+}
+
+.coluna a {
+    color: white;
+    text-decoration: none;
+    font-size: 0.95rem;
+}
+
+.coluna a:hover {
+    text-decoration: underline;
+}

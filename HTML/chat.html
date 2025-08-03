@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100..900;1,100..900&family=Lato&family=Roboto:wght@100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="/CSS/style.css">
+    <link rel="stylesheet" href="/CSS/Chat.css">
+    <title>Login</title>
+</head>
+
+<body>
+    <header>
+        <a href="index.html"><img id="logo" src="/LOGO/Aliança Aurora.png" alt="Logo"></a>
+
+        <div class="area-menu">
+            <a href="/HTML/cadastro.html" class="header-link">Cadastro</a>
+            <a href="/HTML/login.html" class="header-link">Login</a>
+
+            <span class="hamburger-icon" onclick="toggleMenu()">☰</span>
+    </header>
+    <main>
+        <div id="menuHorizontal" class="menu-horizontal">
+            <a href="index.html">Home</a>
+            <a href="cursos.html">Cursos</a>
+            <a href="perfil.html">Perfil</a>
+            <a href="vagas.html">Vagas</a>
+            <a href="chat.html">Atendimento</a>
+                <div class="barra-busca">
+                    <input type="text" placeholder="Buscar">
+                    <button class="botao-buscar">
+                        <img src="/Imagens/icons8-pesquisar-50.png" alt="Buscar" />
+                    </button>
+                </div>
+            </div>
+            <section class="chat-container">
+                <div class="chat-header">Atendimento com Psicólogo</div>
+                <div class="chat-box" id="chatBox">
+                    <div class="mensagem psicologo">Olá, como você está se sentindo hoje?</div>
+                    <div class="mensagem usuario">Nem te conto veinho</div>
+                    <!-- novas mensagens serão inseridas aqui -->
+                </div>
+                <form class="chat-input" id="chatForm">
+                    <input type="text" placeholder="Digite sua mensagem..." id="userMessage" required>
+                    <button type="submit" id="sendButton">Enviar</button>
+                </form>
+            </section>
+    </main>
+
+    <footer class="rodape">
+        <div class="rodape-container">
+            <div class="coluna">
+                <p><a href="#">Sobre a empresa</a></p>
+                <p><a href="#">Sobre nós</a></p>
+                <p><a href="#">Atendimento</a></p>
+                <p><a href="#">Suporte</a></p>
+            </div>
+            <div class="coluna">
+                <p><a href="#">Nossos Parceiros</a></p>
+                <p><a href="#">Senac</a></p>
+            </div>
+            <div class="coluna">
+                <p><a href="#">Atendimento corporativo</a></p>
+            </div>
+            <div class="coluna">
+                <p><a href="#">Políticas de privacidade</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // aqui aparece o navbar embaixo do cabeçalho, quando clicamos no hamburger, javascript do proprio w3schools
+        function toggleMenu() {
+            var menu = document.getElementById("menuHorizontal");
+            menu.style.display = menu.style.display === "flex" ? "none" : "flex";
+        }
+    </script>
+</body>
+
+</html>

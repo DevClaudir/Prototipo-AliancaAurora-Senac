@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100..900;1,100..900&family=Lato&family=Roboto:wght@100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="/CSS/style.css">
+    <link rel="stylesheet" href="/CSS/StyleLogin.css">
+    <title>Login</title>
+</head>
+
+<body>
+    <header>
+        <a href="index.html"><img id="logo" src="/LOGO/Aliança Aurora.png" alt="Logo"></a>
+
+        <div class="area-menu">
+            <a href="cadastro.html" class="header-link">Cadastro</a>
+            <a href="login.html" class="header-link">Login</a>
+
+            <span class="hamburger-icon" onclick="toggleMenu()">☰</span>
+
+    </header>
+    <main>
+        <div id="menuHorizontal" class="menu-horizontal">
+            <a href="index.html">Home</a>
+            <a href="cursos.html">Cursos</a>
+            <a href="perfil.html">Perfil</a>
+            <a href="vagas.html">Vagas</a>
+            <a href="chat.html">Atendimento</a>
+            <div class="barra-busca">
+                <input type="text" placeholder="Buscar">
+                <button class="botao-buscar">
+                    <img src="/Imagens/icons8-pesquisar-50.png" alt="Buscar" />
+                </button>
+            </div>
+        </div>
+        <section>
+            <div class="form-container">
+                <p class="title">Bem-vindo de volta</p>
+
+                <form class="form">
+                    <input type="email" class="input" placeholder="Email">
+                    <input type="password" class="input" placeholder="Digite sua senha">
+                    <p class="page-link">
+                        <span class="page-link-label">Esqueceu a senha?</span>
+                    </p>
+                    <button class="form-btn">Entrar</button>
+                </form>
+
+
+                <p class="sign-up-label">
+                    Ainda não tem uma conta?
+                    <a href="cadastro.html" class="sign-up-link">Cadastre-se</a>
+                </p>
+
+                <div class="buttons-container">
+                    <a href="https://www.facebook.com" class="facebook-login-button">
+                        <img src="/Imagens/facebook.png" alt="Facebook" class="facebook-icon">
+                        <span>Entrar com Facebook</span>
+                    </a>
+
+                    <a href="https://www.google.com" class="google-login-button">
+                        <img src="/Imagens/google.png" alt="Google" class="google-icon">
+                        <span>Entrar com Google</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+    <footer class="rodape">
+        <div class="rodape-container">
+            <div class="coluna">
+                <p><a href="#">Sobre a empresa</a></p>
+                <p><a href="#">Sobre nós</a></p>
+                <p><a href="#">Atendimento</a></p>
+                <p><a href="#">Suporte</a></p>
+            </div>
+            <div class="coluna">
+                <p><a href="#">Nossos Parceiros</a></p>
+                <p><a href="#">Senac</a></p>
+            </div>
+            <div class="coluna">
+                <p><a href="#">Atendimento corporativo</a></p>
+            </div>
+            <div class="coluna">
+                <p><a href="#">Políticas de privacidade</a></p>
+            </div>
+        </div>
+    </footer>
+    <script>
+
+        // aqui aparece o navbar embaixo do cabeçalho, quando clicamos no hamburger, javascript do proprio w3schools
+        function toggleMenu() {
+            var menu = document.getElementById("menuHorizontal");
+            menu.style.display = menu.style.display === "flex" ? "none" : "flex";
+        }
+
+
+    </script>
+
+</body>
+
+</html>
